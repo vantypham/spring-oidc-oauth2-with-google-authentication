@@ -1,0 +1,25 @@
+server:
+  port: 8081
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: xxxxxxxxx.apps.googleusercontent.com
+            client-secret:
+            scope: openid, profile, email
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/auth
+            token-uri: https://oauth2.googleapis.com/token
+            user-info-uri: https://openidconnect.googleapis.com/v1/userinfo
+            jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
+            user-name-attribute: sub
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          client:
+            RestTemplate: DEBUG
